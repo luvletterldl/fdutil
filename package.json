@@ -8,8 +8,10 @@
   "license": "MIT",
   "scripts": {
     "build": "rimraf packages/*/dist && pnpm -r run build",
+    "stub": "pnpm -r --parallel run stub",
     "lint": "eslint .",
     "lint:fix": "nr lint --fix",
+    "publish:ci": "esno scripts/publish.ts",
     "release": "bumpp package.json packages/*/package.json --commit --push --tag"
   },
   "devDependencies": {
