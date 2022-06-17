@@ -1,6 +1,6 @@
 {
-  "name": "@fdutils/monorepo",
-  "version": "0.0.2",
+  "name": "@fdutil/monorepo",
+  "version": "0.0.3",
   "private": true,
   "packageManager": "pnpm@7.2.1",
   "description": "front end developer toolkit",
