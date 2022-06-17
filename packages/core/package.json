@@ -1,0 +1,52 @@
+{
+  "name": "@fdutils/core",
+  "version": "0.0.1",
+  "description": "frontend develop utils",
+  "author": "ldl",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luvletterldl/fdutils.git",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/luvletterldl/fdutils/issues"
+  },
+  "keywords": [
+    "better storage",
+    "image utils"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild"
+  },
+  "peerDependencies": {
+    "localforage": "*",
+    "nanoid": "*"
+  },
+  "peerDependenciesMeta": {
+    "localforage": {
+      "optional": true
+    },
+    "nanoid": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "localforage": "^1.10.0",
+    "nanoid": "^4.0.0"
+  }
+}
