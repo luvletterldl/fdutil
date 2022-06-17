@@ -10,7 +10,7 @@ let lfInstance: LocalForage | null = null
  */
 export function baseStorage<T, K extends string>(key: K, data?: T): Promise<T | null> {
   if (!lfInstance) {
-    console.error('[fdutils] please init localforage instance first!, invoke initLFInstance()')
+    console.error('[fdutil] please init localforage instance first!, invoke initLFInstance()')
     return Promise.resolve(null)
   }
   else {
@@ -27,7 +27,7 @@ export function baseStorage<T, K extends string>(key: K, data?: T): Promise<T | 
  */
 export function initLFInstance(name: string): LocalForage {
   if (lfInstance)
-    console.error('[fdutils] localForage instance already exists')
+    console.error('[fdutil] localForage instance already exists')
   else
     lfInstance = localforage.createInstance({ name })
 

@@ -18,11 +18,11 @@
     "skipDefaultLibCheck": true,
     "noUnusedLocals": true,
     "paths": {
-      "@fdutils/core": ["./packages/core/index.ts"],
-      "@fdutils/core/*": ["./packages/core/*"],
-      "@fdutils/image-utils": ["./packages/image-utils/index.ts"],
-      "@fdutils/shared": ["./packages/shared/index.ts"],
-      "@fdutils/shared/*": ["./packages/shared/*"]
+      "@fdutil/core": ["./packages/core/index.ts"],
+      "@fdutil/core/*": ["./packages/core/*"],
+      "@fdutil/image-utils": ["./packages/image-utils/index.ts"],
+      "@fdutil/shared": ["./packages/shared/index.ts"],
+      "@fdutil/shared/*": ["./packages/shared/*"]
     }
   },
   "include": [
