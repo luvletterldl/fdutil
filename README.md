@@ -13,7 +13,7 @@ browser
 
 ## install
 ```bash
-npm install @fdutil/core
+npm install @fdutil/core localforage
 ```
 
 ## usage
