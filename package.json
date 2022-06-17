@@ -1,6 +1,6 @@
 {
   "name": "@fdutils/monorepo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "packageManager": "pnpm@7.2.1",
   "description": "front end developer toolkit",
@@ -10,7 +10,7 @@
     "build": "rimraf packages/*/dist && pnpm -r run build",
     "lint": "eslint .",
     "lint:fix": "nr lint --fix",
-    "release": "bumpp package.json --commit --push --tag"
+    "release": "bumpp package.json packages/*/package.json --commit --push --tag"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.1",
