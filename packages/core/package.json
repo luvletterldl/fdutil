@@ -1,6 +1,6 @@
 {
   "name": "@fdutil/core",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "frontend develop utils",
   "author": "ldl",
   "license": "MIT",
@@ -35,19 +35,7 @@
     "build": "unbuild",
     "stub": "unbuild --stub"
   },
-  "peerDependencies": {
-    "localforage": "*",
-    "nanoid": "*"
-  },
-  "peerDependenciesMeta": {
-    "localforage": {
-      "optional": true
-    },
-    "nanoid": {
-      "optional": true
-    }
-  },
-  "devDependencies": {
+  "dependencies": {
     "localforage": "^1.10.0",
     "nanoid": "^4.0.0"
   }
