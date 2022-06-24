@@ -1,11 +1,8 @@
 {
   "name": "@fdutil/monorepo",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "private": true,
   "packageManager": "pnpm@7.3.0",
-  "description": "front end developer toolkit",
-  "author": "ldl",
-  "license": "MIT",
   "scripts": {
     "build": "rimraf packages/*/dist && pnpm -r run build && cp ./README.md ./packages/core/README.md",
     "stub": "pnpm -r --parallel run stub",

@@ -1,6 +1,6 @@
 {
   "name": "@fdutil/core",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "frontend develop utils",
   "author": "ldl",
   "license": "MIT",
@@ -36,7 +36,7 @@
     "stub": "unbuild --stub"
   },
   "dependencies": {
-    "localforage": "^1.10.0",
-    "@fdutil/shared": "workspace:*"
+    "@fdutil/shared": "workspace:*",
+    "localforage": "^1.10.0"
   }
 }
