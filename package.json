@@ -1,6 +1,6 @@
 {
   "name": "@fdutil/monorepo",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "private": true,
   "packageManager": "pnpm@7.3.0",
   "description": "front end developer toolkit",
@@ -25,7 +25,9 @@
     "nanoid": "^4.0.0",
     "pnpm": "^7.3.0",
     "typescript": "^4.7.4",
-    "unbuild": "^0.7.4"
+    "unbuild": "^0.7.4",
+    "@fdutil/core": "workspace:*",
+    "@fdutil/shared": "workspace:*"
   },
   "pnpm": {},
   "simple-git-hooks": {
