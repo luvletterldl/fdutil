@@ -1,13 +1,13 @@
 {
   "name": "@fdutil/monorepo",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "private": true,
   "packageManager": "pnpm@7.3.0",
   "description": "front end developer toolkit",
   "author": "ldl",
   "license": "MIT",
   "scripts": {
-    "build": "rimraf packages/*/dist && pnpm -r run build && cp ./README.md ./packages/core/dist/README.md",
+    "build": "rimraf packages/*/dist && pnpm -r run build && cp ./README.md ./packages/core/README.md",
     "stub": "pnpm -r --parallel run stub",
     "lint": "eslint .",
     "lint:fix": "nr lint --fix",
