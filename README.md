@@ -13,12 +13,12 @@ browser
 
 ## install
 ```bash
-npm install @fdutil/core localforage
+npm install @fdutil/core
 ```
 
 ## usage
 ```js
-import { getImgOpaqueOffsets, isDeveloping, initLFInstance, baseStorage } from '@fdutil/core';
+import { getImgOpaqueOffsets, isDeveloping, initLFInstance, baseStorage, getRandomId, isEmptyObject, promiseDomEnv } from '@fdutil/core';
 
 interface UserInfoInterface {
   name: string,
@@ -43,5 +43,9 @@ if (isDeveloping()) {
 getImgOpaqueOffsets(imgUrl).then(({ x, y, w, h }) => {
   console.log("your img's opaque part offsets: ", x, y, w, h);
 })
+
+const randomId = getRandomId()
+
+promiseDomEnv()
 
 ```

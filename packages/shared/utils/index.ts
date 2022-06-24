@@ -1,3 +1,9 @@
+import { nanoid } from 'nanoid'
+
+/**
+ * is developing runtime
+ * @returns boolean
+ */
 export function isDeveloping() {
   return location.host.includes(':')
 }
@@ -9,4 +15,20 @@ export function isEmptyObject(obj: Object) {
   return obj // 👈 null and undefined check
   && Object.keys(obj).length === 0
   && Object.getPrototypeOf(obj) === Object.prototype
+}
+
+/**
+ * generate random id
+ * @returns string
+ */
+export function getRandomId() {
+  return nanoid()
+}
+
+/**
+ * promise at dom env
+ */
+export function promiseDomEnv() {
+  if (!document)
+    throw new Error('[fdutil error]: document is not defined, please use at browser, not node. dom is required')
 }

@@ -1,4 +1,4 @@
-import { nanoid } from 'nanoid'
+import { getRandomId, promiseDomEnv } from "@fdutil/shared"
 
 /**
  * Generate a unique id canvas dom element
@@ -9,7 +9,7 @@ export function newCanvasCtx(width: number, height: number) {
   const canvas = document.createElement('canvas')
   canvas.width = width
   canvas.height = height
-  const randomId = nanoid()
+  const randomId = getRandomId()
   canvas.setAttribute('id', randomId)
   canvas.style.display = 'none'
   document.body.appendChild(canvas)
@@ -48,14 +48,6 @@ export function getImgInfo(src: string): Promise<{ width: number; height: number
       reject(err)
     }
   })
-}
-
-/**
- * promise dom env
- */
-export function promiseDomEnv() {
-  if (!document)
-    throw new Error('document is not defined, please use at browser, not node. dom is required')
 }
 
 /**
