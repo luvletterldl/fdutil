@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "lint:fix": "nr lint --fix",
     "publish:ci": "esno scripts/publish.ts",
+    "publish": "pnpm build && pnpm -r publish",
     "release": "bumpp package.json packages/*/package.json --commit --push --tag"
   },
   "devDependencies": {
