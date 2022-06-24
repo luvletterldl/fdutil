@@ -1,6 +1,6 @@
 {
   "name": "@fdutil/shared",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "frontend develop utils",
   "author": "ldl",
   "license": "MIT",
@@ -34,5 +34,8 @@
   "scripts": {
     "build": "unbuild",
     "stub": "unbuild --stub"
+  },
+  "dependencies": {
+    "nanoid": "^4.0.0"
   }
 }
