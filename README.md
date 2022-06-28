@@ -17,12 +17,12 @@ npm install @fdutil/core
 ```
 
 ## usage
-```js
-import { getImgOpaqueOffsets, isDeveloping, initLFInstance, baseStorage, getRandomId, isEmptyObject, promiseDomEnv } from '@fdutil/core';
+```ts
+import { baseStorage, getImgOpaqueOffsets, getRandomId, initLFInstance, isDeveloping, isEmptyObject, promiseDomEnv } from '@fdutil/core'
 
 interface UserInfoInterface {
-  name: string,
-  age: number,
+  name: string
+  age: number
   // ...
 }
 
@@ -31,17 +31,16 @@ enum StorageKeys {
   // ...
 }
 
-const AppKey = 'your app key';
-initLFInstance(AppKey);
+const AppKey = 'your app key'
+initLFInstance(AppKey)
 
-baseStorage<StorageKeys, UserInfoInterface>(storageKey, { name: 'Jeff', age: 18 });
+baseStorage<StorageKeys, UserInfoInterface>(storageKey, { name: 'Jeff', age: 18 })
 
-if (isDeveloping()) {
-  console.log('developing');
-}
+if (isDeveloping())
+  console.log('developing')
 
 getImgOpaqueOffsets(imgUrl).then(({ x, y, w, h }) => {
-  console.log("your img's opaque part offsets: ", x, y, w, h);
+  console.log('your img\'s opaque part offsets: ', x, y, w, h)
 })
 
 const randomId = getRandomId()

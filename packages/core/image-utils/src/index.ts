@@ -1,4 +1,4 @@
-import { getRandomId, promiseDomEnv } from "@fdutil/shared"
+import { getRandomId, promiseDomEnv } from '@fdutil/shared'
 
 /**
  * Generate a unique id canvas dom element

@@ -8,7 +8,7 @@ const packages = [
   },
   {
     name: 'shared',
-  }
+  },
 ]
 
 execSync('npm run build', { stdio: 'inherit' })
