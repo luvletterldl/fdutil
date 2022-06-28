@@ -23,7 +23,7 @@ jobs:
         run: npm i -g @antfu/ni
 
       - name: Install
-        run: nci
+        run: ni
 
       - name: Lint
         run: nr lint
@@ -41,7 +41,7 @@ jobs:
         run: npm i -g @antfu/ni
 
       - name: Install
-        run: nci
+        run: ni
 
       - name: Build
         run: nr build
@@ -69,7 +69,7 @@ jobs:
         run: npm i -g @antfu/ni
 
       - name: Install
-        run: nci
+        run: ni
 
       - name: Build
         run: nr build
