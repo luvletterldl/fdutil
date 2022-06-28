@@ -19,11 +19,14 @@ jobs:
         with:
           node-version: 16.x
 
+      - name: Setup
+        run: npm i -g pnpm@latest
+
       - name: Install
-        run: npm install
+        run: pnpm install
 
       - name: Lint
-        run: npm run lint
+        run: pnpm lint
 
   typecheck:
     runs-on: ubuntu-latest
@@ -34,14 +37,17 @@ jobs:
         with:
           node-version: 16.x
 
+      - name: Setup
+        run: npm i -g pnpm@latest
+
       - name: Install
-        run: npm install
+        run: pnpm install
 
       - name: Build
-        run: npm run build
+        run: pnpm build
 
       - name: Typecheck
-        run: npm run typecheck
+        run: pnpm typecheck
 
   test:
     runs-on: ${{ matrix.os }}
@@ -59,11 +65,14 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
+      - name: Setup
+        run: npm i -g pnpm@latest
+
       - name: Install
-        run: npm install
+        run: pnpm install
 
       - name: Build
-        run: npm run build
+        run: pnpm build
 
       - name: Test
-        run: npm run test
+        run: pnpm test
