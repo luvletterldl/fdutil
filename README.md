@@ -2,6 +2,7 @@
 
 front end developer toolkit
 
+![version](https://img.shields.io/npm/v/@fdutil/core)
 ![issues](https://img.shields.io/github/issues/luvletterldl/fdutil)
 ![forks](https://img.shields.io/github/forks/luvletterldl/fdutil)
 ![stars](https://img.shields.io/github/stars/luvletterldl/fdutil)
