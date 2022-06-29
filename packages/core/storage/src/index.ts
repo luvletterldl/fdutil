@@ -1,3 +1,4 @@
+import { throwWarning } from '@fdutil/shared'
 import localforage from 'localforage'
 
 let lfInstance: LocalForage | null = null
@@ -27,9 +28,8 @@ export function baseStorage<T, K extends string>(key: K, data?: T): Promise<T | 
  */
 export function initLFInstance(name: string): LocalForage {
   if (lfInstance)
-    console.error('[fdutil] localForage instance already exists')
+    throwWarning('lfInstance', 'lfInstance is already initialized')
   else
     lfInstance = localforage.createInstance({ name })
-
   return lfInstance
 }

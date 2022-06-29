@@ -32,3 +32,17 @@ export function promiseDomEnv() {
   if (!document)
     throw new Error('[fdutil error]: document is not defined, please use at browser, not node. dom is required')
 }
+
+/** get initStorageData */
+export function initStorageData(key: string, defaultData: unknown, isSessionStorage = false) {
+  const storage = isSessionStorage ? sessionStorage.getItem(key) : localStorage.getItem(key)
+  return storage ? JSON.parse(storage) : defaultData
+}
+
+export function throwError(type: string, message: string) {
+  throw new Error(`[fdutil]: ${type} ${message}`)
+}
+
+export function throwWarning(type: string, message: string) {
+  console.warn(`[fdutil]: ${type} ${message}`)
+}
