@@ -2,6 +2,7 @@
 
 front end developer toolkit
 
+![build](https://img.shields.io/github/workflow/status/luvletterldl/fdutil/Release)
 ![version](https://img.shields.io/npm/v/@fdutil/core)
 ![issues](https://img.shields.io/github/issues/luvletterldl/fdutil)
 ![forks](https://img.shields.io/github/forks/luvletterldl/fdutil)
@@ -15,6 +16,8 @@ browser
 ## install
 ```bash
 npm install @fdutil/core
+yarn add @fdutil/core
+pnpm install @fdutil/core
 ```
 
 ## usage
