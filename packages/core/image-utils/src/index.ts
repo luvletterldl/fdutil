@@ -4,7 +4,7 @@ import { getRandomId, promiseDomEnv } from '@fdutil/shared'
  * Generate a unique id canvas dom element
  * @returns
  */
-export function newCanvasCtx(width: number, height: number) {
+function newCanvasCtx(width: number, height: number) {
   promiseDomEnv()
   const canvas = document.createElement('canvas')
   canvas.width = width
@@ -23,7 +23,7 @@ export function newCanvasCtx(width: number, height: number) {
  * remove canvas dom element
  * @param id canvas dom element id
  */
-export function removeCanvasCtx(id: string) {
+function removeCanvasCtx(id: string) {
   promiseDomEnv()
   const canvas = document.getElementById(id)
   if (canvas)
@@ -34,7 +34,7 @@ export function removeCanvasCtx(id: string) {
  * get img info
  * @param src
  */
-export function getImgInfo(src: string): Promise<{ width: number; height: number; img: HTMLImageElement }> {
+function getImgInfo(src: string): Promise<{ width: number; height: number; img: HTMLImageElement }> {
   const img = new window.Image()
   img.crossOrigin = ''
   img.src = src
@@ -80,4 +80,9 @@ export async function getImgOpaqueOffsets(imgSrc: string) {
     w: r - l,
     h: b - t,
   }
+}
+
+/** 获取原始图片地址 */
+export function getImgOriginUrls(url: string) {
+  return url.replace(/\s+/gm, '').match(/https?:\/\/(?:(?!http:\/\/|https:\/\/|\.png|.jpg|.webp|.gif|.ico|.icon|.svg|.jpeg|.HEIC).)*\.(?:png|jpg|webp|gif|ico|icon|svg|jpeg|.HEIC)/g) ?? []
 }

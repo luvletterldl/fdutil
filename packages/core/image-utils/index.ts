@@ -1,1 +1,1 @@
-export { getImgOpaqueOffsets } from './src/index'
+export * from './src/index'

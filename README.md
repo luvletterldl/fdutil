@@ -22,7 +22,7 @@ pnpm install @fdutil/core
 
 ## usage
 ```ts
-import { baseStorage, getImgOpaqueOffsets, getRandomId, initLFInstance, initStorageData, isDeveloping, isEmptyObject, promiseDomEnv } from '@fdutil/core'
+import { baseStorage, getImgOpaqueOffsets, getImgOriginUrls, getRandomId, initLFInstance, initStorageData, isDeveloping, isEmptyObject, promiseDomEnv } from '@fdutil/core'
 
 interface UserInfoInterface {
   name: string
@@ -52,6 +52,9 @@ const randomId = getRandomId()
 promiseDomEnv()
 
 initStorageData('item', { default: true })
+
+const urls = getImgOriginUrls('sadhihttp://a.g*o 32 \^!.webp*.jpg)w \\nebpd https:// sahttps://% ^&   *.png(*&^')
+console.log(urls) // ['http://a.g*o32^!.webp', 'https://%^&*.png']
 ```
 
 ![Alt](https://repobeats.axiom.co/api/embed/4f934f1940ce17efbd27a43b39be583e8d8d45fd.svg "Repobeats analytics image")
