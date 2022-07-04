@@ -1,4 +1,4 @@
-import { throwWarning } from '@fdutil/shared'
+import { throwError, throwWarning } from '@fdutil/shared'
 import localforage from 'localforage'
 
 let lfInstance: LocalForage | null = null
@@ -11,7 +11,7 @@ let lfInstance: LocalForage | null = null
  */
 export function baseStorage<T, K extends string>(key: K, data?: T): Promise<T | null> {
   if (!lfInstance) {
-    console.error('[fdutil] please init localforage instance first!, invoke initLFInstance()')
+    throwError('localforage', 'please init localforage instance first!, invoke initLFInstance()')
     return Promise.resolve(null)
   }
   else {
@@ -32,4 +32,10 @@ export function initLFInstance(name: string): LocalForage {
   else
     lfInstance = localforage.createInstance({ name })
   return lfInstance
+}
+
+/** get storageData */
+export function getStorageData(key: string, defaultData: unknown, isSessionStorage = false) {
+  const storage = isSessionStorage ? sessionStorage.getItem(key) : localStorage.getItem(key)
+  return storage ? JSON.parse(storage) : defaultData
 }

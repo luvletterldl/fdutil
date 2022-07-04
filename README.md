@@ -10,19 +10,21 @@ front end developer toolkit
 ![license](https://img.shields.io/github/license/luvletterldl/fdutil)
 ![download](https://img.shields.io/npm/dm/@fdutil/core)
 
-## env
+# env
 browser
 
-## install
+# install
 ```bash
 npm install @fdutil/core
 yarn add @fdutil/core
 pnpm install @fdutil/core
 ```
 
-## usage
+# usage
+
+## core
 ```ts
-import { baseStorage, getImgOpaqueOffsets, getImgOriginUrls, getRandomId, initLFInstance, initStorageData, isDeveloping, isEmptyObject, promiseDomEnv } from '@fdutil/core'
+import { baseStorage, getImgOpaqueOffsets, getImgOriginUrls, getStorageData, initLFInstance } from '@fdutil/core'
 
 interface UserInfoInterface {
   name: string
@@ -40,18 +42,11 @@ initLFInstance(AppKey)
 
 baseStorage<StorageKeys, UserInfoInterface>(storageKey, { name: 'Jeff', age: 18 })
 
-if (isDeveloping())
-  console.log('developing')
-
 getImgOpaqueOffsets(imgUrl).then(({ x, y, w, h }) => {
   console.log('your img\'s opaque part offsets: ', x, y, w, h)
 })
 
-const randomId = getRandomId()
-
-promiseDomEnv()
-
-initStorageData('item', { default: true })
+getStorageData('item', { default: true })
 
 const urls = getImgOriginUrls('sadhihttp://a.g*o 32 \^!.webp*.jpg)w \\nebpd https:// sahttps://% ^&   *.png(*&^')
 console.log(urls) // ['http://a.g*o32^!.webp', 'https://%^&*.png']

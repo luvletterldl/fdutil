@@ -1,11 +1,10 @@
-import { getRandomId, promiseDomEnv } from '@fdutil/shared'
+import { atDomEnv, getRandomId } from '@fdutil/shared'
 
 /**
- * Generate a unique id canvas dom element
- * @returns
+ * Generate a unique id canvas dom element, append to Dom
+ * @returns canvas ref and canvas id
  */
 function newCanvasCtx(width: number, height: number) {
-  promiseDomEnv()
   const canvas = document.createElement('canvas')
   canvas.width = width
   canvas.height = height
@@ -24,7 +23,6 @@ function newCanvasCtx(width: number, height: number) {
  * @param id canvas dom element id
  */
 function removeCanvasCtx(id: string) {
-  promiseDomEnv()
   const canvas = document.getElementById(id)
   if (canvas)
     document.body.removeChild(canvas)
@@ -56,29 +54,31 @@ function getImgInfo(src: string): Promise<{ width: number; height: number; img: 
  * @returns x: number y: number w: number h: number
  */
 export async function getImgOpaqueOffsets(imgSrc: string) {
-  const { width, height, img } = await getImgInfo(imgSrc)
-  const { canvasCtx, id } = newCanvasCtx(width, height)
-  canvasCtx!.drawImage(img, 0, 0, width, height)
-  const imgData = canvasCtx!.getImageData(0, 0, width, height).data
-  let l = width; let r = 0; let t = height; let b = 0
-  for (let i = 0; i < width; i++) {
-    for (let j = 0; j < height; j++) {
-      const pos = (i + width * j) * 4
-      if (imgData[pos] > 0 || imgData[pos + 1] > 0 || imgData[pos + 2] || imgData[pos + 3] > 0) {
-        b = Math.max(j, b)
-        r = Math.max(i, r)
-        t = Math.min(j, t)
-        l = Math.min(i, l)
+  if (atDomEnv()) {
+    const { width, height, img } = await getImgInfo(imgSrc)
+    const { canvasCtx, id } = newCanvasCtx(width, height)
+    canvasCtx!.drawImage(img, 0, 0, width, height)
+    const imgData = canvasCtx!.getImageData(0, 0, width, height).data
+    let l = width; let r = 0; let t = height; let b = 0
+    for (let i = 0; i < width; i++) {
+      for (let j = 0; j < height; j++) {
+        const pos = (i + width * j) * 4
+        if (imgData[pos] > 0 || imgData[pos + 1] > 0 || imgData[pos + 2] || imgData[pos + 3] > 0) {
+          b = Math.max(j, b)
+          r = Math.max(i, r)
+          t = Math.min(j, t)
+          l = Math.min(i, l)
+        }
       }
     }
-  }
-  l++; r++; t++; b++
-  removeCanvasCtx(id)
-  return {
-    x: l,
-    y: t,
-    w: r - l,
-    h: b - t,
+    l++; r++; t++; b++
+    removeCanvasCtx(id)
+    return {
+      x: l,
+      y: t,
+      w: r - l,
+      h: b - t,
+    }
   }
 }
 
