@@ -8,6 +8,11 @@ describe('core package', () => {
   test('getInitStorageData', () => {
     expect(getStorageData('test', { a: 1 })).toEqual({ a: 1 })
   })
+  test('getInitStorageData', () => {
+    const key = 'key'
+    localStorage.setItem(key, 'str')
+    expect(getStorageData(key, 'string')).toEqual('str')
+  })
 })
 test('inited if instance', () => {
   expect(initLFInstance('lfName')).toHaveProperty('INDEXEDDB')

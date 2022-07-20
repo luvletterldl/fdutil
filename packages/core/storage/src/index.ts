@@ -37,5 +37,15 @@ export function initLFInstance(name: string): LocalForage {
 /** get storageData */
 export function getStorageData(key: string, defaultData: unknown, isSessionStorage = false) {
   const storage = isSessionStorage ? sessionStorage.getItem(key) : localStorage.getItem(key)
-  return storage ? JSON.parse(storage) : defaultData
+  if (storage) {
+    try {
+      return JSON.parse(storage)
+    }
+    catch (err) {
+      return storage
+    }
+  }
+  else {
+    return defaultData
+  }
 }
