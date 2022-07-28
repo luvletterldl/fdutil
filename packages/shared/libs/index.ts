@@ -11,3 +11,12 @@ export function isEmptyObject(obj: Object) {
 export function getRandomId() {
   return nanoid()
 }
+
+export function Jsonify(v: string) {
+  try {
+    return JSON.parse(v)
+  }
+  catch (_) {
+    return v
+  }
+}

@@ -1,4 +1,4 @@
-import { throwError, throwWarning } from '@fdutil/shared'
+import { Jsonify, throwError, throwWarning } from '@fdutil/shared'
 import localforage from 'localforage'
 
 let lfInstance: LocalForage | null = null
@@ -37,15 +37,9 @@ export function initLFInstance(name: string): LocalForage {
 /** get storageData */
 export function getStorageData(key: string, defaultData: unknown, isSessionStorage = false) {
   const storage = isSessionStorage ? sessionStorage.getItem(key) : localStorage.getItem(key)
-  if (storage) {
-    try {
-      return JSON.parse(storage)
-    }
-    catch (err) {
-      return storage
-    }
-  }
-  else {
+  if (storage)
+    return Jsonify(storage)
+
+  else
     return defaultData
-  }
 }
