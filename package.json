@@ -1,6 +1,6 @@
 {
   "name": "@fdutil/monorepo",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "private": true,
   "packageManager": "pnpm@7.3.0",
   "scripts": {
@@ -18,7 +18,7 @@
     "@antfu/eslint-config": "^0.25.2",
     "@fdutil/core": "workspace:*",
     "@fdutil/shared": "workspace:*",
-    "@types/node": "^18.0.6",
+    "@types/node": "^18.6.2",
     "bumpp": "^8.2.1",
     "c8": "^7.12.0",
     "consola": "^2.15.3",
@@ -27,11 +27,11 @@
     "jsdom": "^20.0.0",
     "localforage": "^1.10.0",
     "nanoid": "^4.0.0",
-    "pnpm": "^7.5.2",
+    "pnpm": "^7.6.0",
     "typescript": "^4.7.4",
-    "unbuild": "^0.7.4",
-    "vite": "^3.0.2",
-    "vitest": "^0.18.1"
+    "unbuild": "^0.7.6",
+    "vite": "^3.0.3",
+    "vitest": "^0.19.1"
   },
   "pnpm": {},
   "simple-git-hooks": {
