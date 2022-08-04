@@ -11,7 +11,8 @@ describe('net moduel work!', () => {
     const url = '/example.com'
     const url1 = `${url}?`
     const query = '?a=1&b=2&c=3'
-    expect(paramsToQuery(params, url)).toBe(url + query)
-    expect(paramsToQuery(params, url1)).toBe(url + query)
+    expect(paramsToQuery(url, params)).toBe(url + query)
+    expect(paramsToQuery(url1, params)).toBe(url + query)
+    expect(paramsToQuery(url)).toBe(url)
   })
 })

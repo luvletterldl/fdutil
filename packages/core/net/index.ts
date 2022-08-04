@@ -6,8 +6,8 @@ import { isEmptyObject } from '@fdutil/shared'
  * @param url base request url
  * @returns query url
  */
-export function paramsToQuery(params: { [key: string]: any }, url: string) {
-  if (!isEmptyObject(params)) {
+export function paramsToQuery(url: string, params?: { [key: string]: any }) {
+  if (params && !isEmptyObject(params)) {
     let query = url.endsWith('?') ? '' : '?'
     Object.keys(params).forEach((key, index) => {
       query += `${key}=${params[key]}`
