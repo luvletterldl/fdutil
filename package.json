@@ -1,6 +1,6 @@
 {
   "name": "@fdutil/monorepo",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "private": true,
   "packageManager": "pnpm@7.9.0",
   "scripts": {
