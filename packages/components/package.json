@@ -1,0 +1,41 @@
+{
+  "name": "@fdutil/components",
+  "version": "0.0.25",
+  "description": "frontend develop components",
+  "author": "ldl",
+  "license": "MIT",
+  "homepage": "https://github.com/luvletterldl/fdutil/tree/main/packages/components#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luvletterldl/fdutil.git",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/luvletterldl/fdutil/issues"
+  },
+  "keywords": [
+    "simple components"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "stub": "unbuild --stub"
+  },
+  "dependencies": {
+    "@fdutil/shared": "workspace:*",
+    "vue-demi": "*"
+  }
+}
