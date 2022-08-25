@@ -71,8 +71,6 @@ const url = '/example.com'
 paramsToQuery(url, params) // '/example.com?a=1&b=2&c=3'
 ```
 
-![Alt](https://repobeats.axiom.co/api/embed/4f934f1940ce17efbd27a43b39be583e8d8d45fd.svg "Repobeats analytics image")
-
 ### components
 ```ts
 import { PlaceholderImg } from '@fdutil/components'
@@ -80,6 +78,8 @@ import { PlaceholderImg } from '@fdutil/components'
 ```html
 <PlaceholderImg :wh="300" bghex="0000FF" texthex="FFFFFF" text="Hello, I'm PlaceholderImg text." />
 ```
+
+![Alt](https://repobeats.axiom.co/api/embed/4f934f1940ce17efbd27a43b39be583e8d8d45fd.svg "Repobeats analytics image")
 
 # License
 

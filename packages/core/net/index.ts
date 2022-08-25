@@ -10,9 +10,11 @@ export function paramsToQuery(url: string, params?: { [key: string]: any }) {
   if (params && !isEmptyObject(params)) {
     let query = url.endsWith('?') ? '' : '?'
     Object.keys(params).forEach((key, index) => {
-      query += `${key}=${params[key]}`
-      if (index < Object.keys(params).length - 1)
-        query += '&'
+      if (params[key] !== undefined && params[key] !== null) {
+        query += `${key}=${params[key]}`
+        if (index < Object.keys(params).length - 1)
+          query += '&'
+      }
     })
     return url + query
   }
