@@ -22,3 +22,19 @@ export function paramsToQuery(url: string, params?: { [key: string]: any }) {
     return url
   }
 }
+
+/**
+ * params to FormData
+ * @param params params
+ * @returns FormData
+ */
+export function paramsToFormData(params: { [key: string]: any }) {
+  const formData = new FormData()
+  if (params && !isEmptyObject(params)) {
+    Object.keys(params).forEach((key) => {
+      if (params[key] !== undefined && params[key] !== null)
+        formData.append(key, params[key])
+    })
+    return formData
+  }
+}

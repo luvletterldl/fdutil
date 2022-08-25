@@ -60,7 +60,7 @@ console.log(urls) // ['http://a.g*o32^!.webp', 'https://%^&*.png']
 
 ### net
 ```ts
-import { paramsToQuery } from '@fdutil/core'
+import { paramsToQuery, paramsToFormData } from '@fdutil/core'
 
 const params = {
   a: 1,
@@ -69,6 +69,7 @@ const params = {
 }
 const url = '/example.com'
 paramsToQuery(url, params) // '/example.com?a=1&b=2&c=3'
+paramsToFormData(params) // to be FormData
 ```
 
 ### components
