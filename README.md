@@ -80,6 +80,31 @@ import { PlaceholderImg } from '@fdutil/components'
 <PlaceholderImg :wh="300" bghex="0000FF" texthex="FFFFFF" text="Hello, I'm PlaceholderImg text." />
 ```
 
+### request
+
+web request with abort
+
+```ts
+import { getJSONReq, postJSONReq, uniRequest } from '@fdutil/request'
+const url = 'https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=7'
+let ac = null, pac = null
+getJSONReq(url, { ac })
+
+postJSONReq(url, body, { pac })
+// abort request
+ac.abort()
+pac.abort()
+```
+
+uni-app request
+```ts
+uniRequest(url, {
+  method: 'GET' // 'GET' | 'POST',
+  body, // post body,
+  headers // request headers
+})
+```
+
 ![Alt](https://repobeats.axiom.co/api/embed/4f934f1940ce17efbd27a43b39be583e8d8d45fd.svg "Repobeats analytics image")
 
 # License

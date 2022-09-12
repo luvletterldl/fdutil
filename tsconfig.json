@@ -17,6 +17,7 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "noUnusedLocals": true,
+    "types": ["@dcloudio/types"],
     "paths": {
       "@fdutil/core": ["./packages/core/index.ts"],
       "@fdutil/core/*": ["./packages/core/*"],

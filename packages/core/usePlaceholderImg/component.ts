@@ -31,8 +31,6 @@ export const PlaceholderImg = defineComponent<UsePlaceholderImgOptions>({
       return u
     })
 
-    return () => {
-      return h('img', { src: url })
-    }
+    return () => h('img', { src: url })
   },
 })
